@@ -12,6 +12,8 @@ import ru.rabbet.forrabet.R
 
 class MainActivity: AppCompatActivity() {
 
+    val firebase = FirebaseRemoteConfig.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "755880868736",
+    "firebase_url": "https://rabet-66e76.firebaseio.com",
+    "project_id": "rabet-66e76",
+    "storage_bucket": "rabet-66e76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755880868736:android:a6001680490f3994",
+        "android_client_info": {
+          "package_name": "ru.rabbet.forrabet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755880868736-tgdaoidsmp68fqqn65mo5pa42qckckmv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.rabbet.forrabet",
+            "certificate_hash": "7ac991d360cee4fc3ea417dcd3ff26bc0028e783"
+          }
+        },
+        {
+          "client_id": "755880868736-83pin7ms25kucgq82a3ir293r7tlts7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnUmFHdSfYwwc2wsO_RbsR7h5g4Euh1So"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755880868736-83pin7ms25kucgq82a3ir293r7tlts7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
