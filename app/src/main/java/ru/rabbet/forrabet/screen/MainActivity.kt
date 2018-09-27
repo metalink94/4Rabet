@@ -16,20 +16,21 @@ import ru.rabbet.forrabet.application.FourRabetApp
 class MainActivity : AppCompatActivity() {
 
     val firebase = FirebaseRemoteConfig.getInstance()
+    var currentUrl: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
         initWebView()
+        swipeRefresh.setOnRefreshListener {
+            swipeRefresh.isRefreshing = true
+            load()
+        }
     }
 
     private fun getUrl(): String {
         return if (application is FourRabetApp) {
-            if (BuildConfig.DEBUG) {
-                (application as FourRabetApp).remoteConfig.getString("url_test")
-            } else {
-                (application as FourRabetApp).remoteConfig.getString("url")
-            }
+            (application as FourRabetApp).remoteConfig.getString("url")
         } else {
             getString(R.string.url)
         }
@@ -39,13 +40,12 @@ class MainActivity : AppCompatActivity() {
         webView.webChromeClient = WebChromeClient()
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
-                return if (url != null && (url.startsWith("http://") || url.startsWith("https://"))) {
-                    view.context.startActivity(
-                            Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                    true
-                } else {
-                    false
-                }
+                currentUrl = url
+                return false
+            }
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                swipeRefresh.isRefreshing = false
             }
         }
         webView.clearCache(true)
@@ -59,6 +59,11 @@ class MainActivity : AppCompatActivity() {
         webView.isScrollbarFadingEnabled = false
         webView.settings.builtInZoomControls = true
         webView.settings.displayZoomControls = false
-        webView.loadUrl(getUrl())
+        currentUrl = getUrl()
+        load()
+    }
+
+    private fun load() {
+        webView.loadUrl(currentUrl)
     }
 }
