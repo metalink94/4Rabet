@@ -1,7 +1,5 @@
 package ru.rabbet.forrabet.screen
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.webkit.WebChromeClient
@@ -9,7 +7,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import kotlinx.android.synthetic.main.main.*
-import ru.rabbet.forrabet.BuildConfig
 import ru.rabbet.forrabet.R
 import ru.rabbet.forrabet.application.FourRabetApp
 
@@ -43,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                 currentUrl = url
                 return false
             }
+
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 swipeRefresh.isRefreshing = false
