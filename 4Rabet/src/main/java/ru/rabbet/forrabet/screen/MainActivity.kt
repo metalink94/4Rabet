@@ -2,6 +2,7 @@ package ru.rabbet.forrabet.screen
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -9,6 +10,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import kotlinx.android.synthetic.main.main.*
 import ru.rabbet.forrabet.R
 import ru.rabbet.forrabet.application.FourRabetApp
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getUrl(): String {
         return if (application is FourRabetApp) {
+            Log.d("FourRabetApp", (application as FourRabetApp).remoteConfig.getString("url"))
             (application as FourRabetApp).remoteConfig.getString("url")
         } else {
             getString(R.string.url)
