@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import ru.rabbet.forrabet.application.FourRabetApp
 import android.content.pm.PackageManager
-
+import ru.rabbet.forrabet.network.ApiService
 
 
 open class BaseActivity: AppCompatActivity() {
 
+    lateinit var apiService: ApiService
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        apiService = (application as FourRabetApp).apiService
         super.onCreate(savedInstanceState)
     }
 
@@ -26,6 +29,5 @@ open class BaseActivity: AppCompatActivity() {
         } catch (e: PackageManager.NameNotFoundException) {
             return false
         }
-
     }
 }

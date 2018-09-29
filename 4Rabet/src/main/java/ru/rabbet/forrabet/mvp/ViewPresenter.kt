@@ -1,5 +1,8 @@
 package ru.rabbet.forrabet.mvp
 
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import kotlinx.coroutines.experimental.Job
 import java.lang.ref.WeakReference
 
 abstract class ViewPresenter<V : IView> {

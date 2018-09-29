@@ -5,11 +5,15 @@ import android.content.Context
 import android.util.Log
 import com.google.firebase.FirebaseApp
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import ru.rabbet.forrabet.network.ApiService
+import ru.rabbet.forrabet.network.RetrofitBuilder
 import java.io.File
 
 class FourRabetApp : Application() {
 
     lateinit var remoteConfig: FirebaseRemoteConfig
+    private val retrofit: Retrofit = RetrofitBuilder.build()
+    lateinit var apiService: ApiService
 
     override fun onCreate() {
         FirebaseApp.initializeApp(this)
@@ -18,6 +22,7 @@ class FourRabetApp : Application() {
         remoteConfig.activateFetched()
         fetch()
         super.onCreate()
+        apiService = retrofit.create(ApiService::class)
     }
 
     private fun fetch() {
@@ -38,5 +43,9 @@ class FourRabetApp : Application() {
         return mapOf(
                 "url" to "http://4rabet.com"
         )
+    }
+
+    fun getApiService(): ApiService {
+        return apiService
     }
 }
