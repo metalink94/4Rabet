@@ -16,4 +16,13 @@
         <item name = "android:windowNoTitle">true</item>
     </style>
 
+    <style name="ButtonStyle">
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:padding">@dimen/spacing_small_12</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

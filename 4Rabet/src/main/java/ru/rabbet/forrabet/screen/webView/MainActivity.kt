@@ -1,4 +1,4 @@
-package ru.rabbet.forrabet.screen
+package ru.rabbet.forrabet.screen.webView
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -10,11 +10,11 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import kotlinx.android.synthetic.main.main.*
 import ru.rabbet.forrabet.R
 import ru.rabbet.forrabet.application.FourRabetApp
+import ru.rabbet.forrabet.utils.BaseActivity
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
-    val firebase = FirebaseRemoteConfig.getInstance()
     var currentUrl: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun getUrl(): String {
         return if (application is FourRabetApp) {
-            Log.d("FourRabetApp", (application as FourRabetApp).remoteConfig.getString("url"))
-            (application as FourRabetApp).remoteConfig.getString("url")
+            Log.d("FourRabetApp", getRemoteConfig().getString("url"))
+            getRemoteConfig().getString("url")
         } else {
             getString(R.string.url)
         }

@@ -2,4 +2,9 @@
     <string name="app_name">4Rabet</string>
     <string name="url">http://4rabet.com</string>
     <string name="url2">http://Saturn-bet.com</string>
+    <string name="results">Результаты</string>
+    <string name="chat">Чат</string>
+    <string name="about">О приложении</string>
+    <string name="telegram">org.telegram.messenger</string>
+    <string name="open_with">Открыть с помощью</string>
 </resources>

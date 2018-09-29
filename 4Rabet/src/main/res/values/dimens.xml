@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_very_small_4">4dp</dimen>
+    <dimen name="spacing_tiny_6">6dp</dimen>
+    <dimen name="spacing_smallest_8">8dp</dimen>
+    <dimen name="spacing_smaller_10">10dp</dimen>
+    <dimen name="spacing_small_12">12dp</dimen>
+    <dimen name="spacing_small_14">14dp</dimen>
+    <dimen name="spacing_normal_16">16dp</dimen>
+    <dimen name="spacing_very_large_24">24dp</dimen>
+
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_big">18sp</dimen>
+    <dimen name="text_size_bigger">20sp</dimen>
+    <dimen name="button_width">240dp</dimen>
+</resources>

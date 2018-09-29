@@ -15,12 +15,17 @@
 
 
         >
-        <activity android:name=".screen.MainActivity">
+        <activity android:name=".screen.webView.MainActivity"/>
+        <activity android:name=".utils.BaseActivity" />
+        <activity android:name=".screen.menu.MenuActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".screen.about.AboutActivity" />
+        <activity android:name=".screen.results.ResultsActivity" />
     </application>
 </manifest>
